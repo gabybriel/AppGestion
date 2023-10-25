@@ -166,10 +166,15 @@
                 </li>
                 <li>
                     <div class="dropdown drp-user">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="feather icon-user"></i>
-                            {{ app.user.lastname }}
-                        </a> <a href="{{ path('app_logout') }}" class="btn-link"> Logout </a>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="feather icon-user"></i>
+                                {{ app.user.lastname }}
+                            </button>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body bg-primary">
+                                <a href="{{ path('app_logout') }}"> Logout </a>
+                            </div>
+                          </div>
                     </div>
                 </li>
             </ul>
@@ -223,5 +228,7 @@
     </div>
 </div>
 <!-- [ stiped-table ] end -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
 
 {% endblock %}
